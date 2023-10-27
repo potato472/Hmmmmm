@@ -11,7 +11,6 @@ import urllib.parse
 from keep_alive import keep_alive
 from dotenv import load_dotenv
 from discord.ext import commands
-from bardapi import Bard
 from time import sleep
 
 load_dotenv()
@@ -40,14 +39,6 @@ if os.name == "nt":
     os.system("cls")
 else:
     os.system("clear")
-
-try:
-    bard = Bard(
-        token=f'{os.getenv("BARD_COOKIE")}',
-    )
-except:
-    print("Bard cookie not set or has expired, so only ChatGPT will be available.")
-    sleep(5)
 
 
 modeltype = 0
